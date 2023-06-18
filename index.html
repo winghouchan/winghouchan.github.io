@@ -2,9 +2,135 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>wing</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        color: #000000;
+        min-height: 100vh;
+        font-family: "Roboto Mono", monospace;
+        font-size: 1.5em;
+        line-height: 1.4;
+        margin: 0;
+        padding: 1em;
+      }
+
+      ::selection {
+        background-color: #333333;
+        color: #ffffff;
+      }
+
+      p {
+        margin: 1em 0;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.1s ease;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      a[target="_blank"]::after {
+        content: " ↗"
+      }
+
+      .logo {
+        height: 40px;
+      }
+
+      .logo.light-mode {
+        display: block;
+      }
+
+      .logo.dark-mode {
+        display: none;
+      }
+
+      #email:hover {
+        color: #ea4335;
+      }
+
+      #github:hover {
+        color: #1f883d;
+      }
+
+      #linkedin:hover {
+        color: #0077b5;
+      }
+
+      #stackoverflow:hover {
+        color: #f48225;
+      }
+
+      #strava:hover {
+        color: #fc5200;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #000000;
+          color: #ffffff;
+        }
+
+        .logo.dark-mode {
+          display: block;
+        }
+
+        .logo.light-mode {
+          display: none;
+        }
+      }
+
+      @media (min-width: 50em) {
+        body {
+          font-size: 2em;
+        }
+
+        .logo {
+          height: 60px;
+        }
+
+        #container {
+          width: 50%;
+        }
+      }
+    </style>
   </head>
   <body>
-    hello world
+    <div id="container">
+      <img class="logo light-mode" src="./logo-light-mode.svg" />
+      <img class="logo dark-mode" src="./logo-dark-mode.svg" />
+      <p>Hello, I'm Wing, a software engineer based in London.</p>
+      <p>Find me on:</p>
+      <ul>
+        <li><a id="email" href="mailto:hello@wii.ng" target="_blank">Email</a></li>
+        <li><a id="github" href="https://github.com/winghouchan" target="_blank">GitHub</a></li>
+        <li><a id="linkedin" href="https://linkedin.com/in/wing" target="_blank">LinkedIn</a></li>
+        <li><a id="stackoverflow" href="https://stackoverflow.com/users/3050293/wing" target="_blank">Stack Overflow</a></li>
+        <li><a id="strava" href="https://strava.com/athletes/winghouchan" target="_blank">Strava</a></li>
+      </ul>
+
+    </div>
   </body>
 </html>
